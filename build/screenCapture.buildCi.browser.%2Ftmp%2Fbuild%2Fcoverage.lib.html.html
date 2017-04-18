@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-keypress/keypress/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-keypress/node_modules/keypress/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-keypress">npmtest-keypress (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-keypress/keypress/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-keypress/node_modules/keypress/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">4.8% <small>(13 / 271)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-keypress/keypress/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-keypress/node_modules/keypress/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1070,34 +1068,34 @@ var exports = module.exports = keypress;
  * @api public
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function keypress(stream) {</span>
-<span class="cstat-no" title="statement not covered" >  if (isEmittingKeypress(stream)) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="fstat-no" title="function not covered">function keypress(stream) {</span>
+<span class="cstat-no" title="statement not covered">  if (isEmittingKeypress(stream)) <span class="cstat-no" title="statement not covered">return;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var StringDecoder = require('string_decoder').StringDecoder; </span>// lazy load
-<span class="cstat-no" title="statement not covered" >  stream._keypressDecoder = new StringDecoder('utf8');</span>
+<span class="cstat-no" title="statement not covered">  var StringDecoder = require('string_decoder').StringDecoder; </span>// lazy load
+<span class="cstat-no" title="statement not covered">  stream._keypressDecoder = new StringDecoder('utf8');</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function onData(b) {</span>
-<span class="cstat-no" title="statement not covered" >    if (listenerCount(stream, 'keypress') &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      var r = stream._keypressDecoder.write(b);</span>
-<span class="cstat-no" title="statement not covered" >      if (r) <span class="cstat-no" title="statement not covered" >emitKey(stream, r);</span></span>
+<span class="fstat-no" title="function not covered">  function onData(b) {</span>
+<span class="cstat-no" title="statement not covered">    if (listenerCount(stream, 'keypress') &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">      var r = stream._keypressDecoder.write(b);</span>
+<span class="cstat-no" title="statement not covered">      if (r) <span class="cstat-no" title="statement not covered">emitKey(stream, r);</span></span>
     } else {
       // Nobody's watching anyway
-<span class="cstat-no" title="statement not covered" >      stream.removeListener('data', onData);</span>
-<span class="cstat-no" title="statement not covered" >      stream.on('newListener', onNewListener);</span>
+<span class="cstat-no" title="statement not covered">      stream.removeListener('data', onData);</span>
+<span class="cstat-no" title="statement not covered">      stream.on('newListener', onNewListener);</span>
     }
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function onNewListener(event) {</span>
-<span class="cstat-no" title="statement not covered" >    if (event == 'keypress') {</span>
-<span class="cstat-no" title="statement not covered" >      stream.on('data', onData);</span>
-<span class="cstat-no" title="statement not covered" >      stream.removeListener('newListener', onNewListener);</span>
+<span class="fstat-no" title="function not covered">  function onNewListener(event) {</span>
+<span class="cstat-no" title="statement not covered">    if (event == 'keypress') {</span>
+<span class="cstat-no" title="statement not covered">      stream.on('data', onData);</span>
+<span class="cstat-no" title="statement not covered">      stream.removeListener('newListener', onNewListener);</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (listenerCount(stream, 'keypress') &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    stream.on('data', onData);</span>
+<span class="cstat-no" title="statement not covered">  if (listenerCount(stream, 'keypress') &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">    stream.on('data', onData);</span>
   } else {
-<span class="cstat-no" title="statement not covered" >    stream.on('newListener', onNewListener);</span>
+<span class="cstat-no" title="statement not covered">    stream.on('newListener', onNewListener);</span>
   }
 }
 &nbsp;
@@ -1110,24 +1108,24 @@ var exports = module.exports = keypress;
  * @api private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isEmittingKeypress(stream) {</span>
-<span class="cstat-no" title="statement not covered" >  var rtn = !!stream._keypressDecoder;</span>
-<span class="cstat-no" title="statement not covered" >  if (!rtn) {</span>
+<span class="fstat-no" title="function not covered">function isEmittingKeypress(stream) {</span>
+<span class="cstat-no" title="statement not covered">  var rtn = !!stream._keypressDecoder;</span>
+<span class="cstat-no" title="statement not covered">  if (!rtn) {</span>
     // XXX: for older versions of node (v0.6.x, v0.8.x) we want to remove the
     // existing "data" and "newListener" keypress events since they won't include
     // this `keypress` module extensions (like "mousepress" events).
-<span class="cstat-no" title="statement not covered" >    stream.listeners('data').slice(0).forEach(<span class="fstat-no" title="function not covered" >function(l) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (l.name == 'onData' &amp;&amp; /emitKey/.test(l.toString())) {</span>
-<span class="cstat-no" title="statement not covered" >        stream.removeListener('data', l);</span>
+<span class="cstat-no" title="statement not covered">    stream.listeners('data').slice(0).forEach(<span class="fstat-no" title="function not covered">function(l) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (l.name == 'onData' &amp;&amp; /emitKey/.test(l.toString())) {</span>
+<span class="cstat-no" title="statement not covered">        stream.removeListener('data', l);</span>
       }
     });
-<span class="cstat-no" title="statement not covered" >    stream.listeners('newListener').slice(0).forEach(<span class="fstat-no" title="function not covered" >function(l) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (l.name == 'onNewListener' &amp;&amp; /keypress/.test(l.toString())) {</span>
-<span class="cstat-no" title="statement not covered" >        stream.removeListener('newListener', l);</span>
+<span class="cstat-no" title="statement not covered">    stream.listeners('newListener').slice(0).forEach(<span class="fstat-no" title="function not covered">function(l) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (l.name == 'onNewListener' &amp;&amp; /keypress/.test(l.toString())) {</span>
+<span class="cstat-no" title="statement not covered">        stream.removeListener('newListener', l);</span>
       }
     });
   }
-<span class="cstat-no" title="statement not covered" >  return rtn;</span>
+<span class="cstat-no" title="statement not covered">  return rtn;</span>
 }
 &nbsp;
 /**
@@ -1138,8 +1136,8 @@ var exports = module.exports = keypress;
  * @api public
  */
 &nbsp;
-exports.enableMouse = <span class="fstat-no" title="function not covered" >function (stream) {</span>
-<span class="cstat-no" title="statement not covered" >  stream.write('\x1b[?1000h');</span>
+exports.enableMouse = <span class="fstat-no" title="function not covered">function (stream) {</span>
+<span class="cstat-no" title="statement not covered">  stream.write('\x1b[?1000h');</span>
 };
 &nbsp;
 /**
@@ -1151,8 +1149,8 @@ exports.enableMouse = <span class="fstat-no" title="function not covered" >funct
  * @api public
  */
 &nbsp;
-exports.disableMouse = <span class="fstat-no" title="function not covered" >function (stream) {</span>
-<span class="cstat-no" title="statement not covered" >  stream.write('\x1b[?1000l');</span>
+exports.disableMouse = <span class="fstat-no" title="function not covered">function (stream) {</span>
+<span class="cstat-no" title="statement not covered">  stream.write('\x1b[?1000l');</span>
 };
 &nbsp;
 /**
@@ -1165,9 +1163,9 @@ exports.disableMouse = <span class="fstat-no" title="function not covered" >func
  */
 &nbsp;
 var listenerCount = EventEmitter.listenerCount;
-<span class="missing-if-branch" title="if path not taken" >I</span>if (!listenerCount) {
-<span class="cstat-no" title="statement not covered" >  listenerCount = <span class="fstat-no" title="function not covered" >function(emitter, event) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return emitter.listeners(event).length;</span>
+<span class="missing-if-branch" title="if path not taken">I</span>if (!listenerCount) {
+<span class="cstat-no" title="statement not covered">  listenerCount = <span class="fstat-no" title="function not covered">function(emitter, event) {</span></span>
+<span class="cstat-no" title="statement not covered">    return emitter.listeners(event).length;</span>
   };
 }
 &nbsp;
@@ -1210,8 +1208,8 @@ var metaKeyCodeRe = /^(?:\x1b)([a-zA-Z0-9])$/;
 var functionKeyCodeRe =
     /^(?:\x1b+)(O|N|\[|\[\[)(?:(\d+)(?:;(\d+))?([~^$])|(?:1;)?(\d+)?([a-zA-Z]))/;
 &nbsp;
-<span class="fstat-no" title="function not covered" >function emitKey(stream, s) {</span>
-<span class="cstat-no" title="statement not covered" >  var ch,</span>
+<span class="fstat-no" title="function not covered">function emitKey(stream, s) {</span>
+<span class="cstat-no" title="statement not covered">  var ch,</span>
       key = {
         name: undefined,
         ctrl: false,
@@ -1220,232 +1218,233 @@ var functionKeyCodeRe =
       },
       parts;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (Buffer.isBuffer(s)) {</span>
-<span class="cstat-no" title="statement not covered" >    if (s[0] &gt; 127 &amp;&amp; s[1] === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >      s[0] -= 128;</span>
-<span class="cstat-no" title="statement not covered" >      s = '\x1b' + s.toString(stream.encoding || 'utf-8');</span>
+<span class="cstat-no" title="statement not covered">  if (Buffer.isBuffer(s)) {</span>
+<span class="cstat-no" title="statement not covered">    if (s[0] &gt; 127 &amp;&amp; s[1] === undefined) {</span>
+<span class="cstat-no" title="statement not covered">      s[0] -= 128;</span>
+<span class="cstat-no" title="statement not covered">      s = '\x1b' + s.toString(stream.encoding || 'utf-8');</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      s = s.toString(stream.encoding || 'utf-8');</span>
+<span class="cstat-no" title="statement not covered">      s = s.toString(stream.encoding || 'utf-8');</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  key.sequence = s;</span>
+<span class="cstat-no" title="statement not covered">  key.sequence = s;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (s === '\r') {</span>
+<span class="cstat-no" title="statement not covered">  if (s === '\r') {</span>
     // carriage return
-<span class="cstat-no" title="statement not covered" >    key.name = 'return';</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'return';</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s === '\n') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s === '\n') {</span>
     // enter, should have been called linefeed
-<span class="cstat-no" title="statement not covered" >    key.name = 'enter';</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'enter';</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s === '\t') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s === '\t') {</span>
     // tab
-<span class="cstat-no" title="statement not covered" >    key.name = 'tab';</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'tab';</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s === '\b' || s === '\x7f' ||</span>
+  } else <span class="cstat-no" title="statement not covered">if (s === '\b' || s === '\x7f' ||</span>
              s === '\x1b\x7f' || s === '\x1b\b') {
     // backspace or ctrl+h
-<span class="cstat-no" title="statement not covered" >    key.name = 'backspace';</span>
-<span class="cstat-no" title="statement not covered" >    key.meta = (s.charAt(0) === '\x1b');</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'backspace';</span>
+<span class="cstat-no" title="statement not covered">    key.meta = (s.charAt(0) === '\x1b');</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s === '\x1b' || s === '\x1b\x1b') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s === '\x1b' || s === '\x1b\x1b') {</span>
     // escape key
-<span class="cstat-no" title="statement not covered" >    key.name = 'escape';</span>
-<span class="cstat-no" title="statement not covered" >    key.meta = (s.length === 2);</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'escape';</span>
+<span class="cstat-no" title="statement not covered">    key.meta = (s.length === 2);</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s === ' ' || s === '\x1b ') {</span>
-<span class="cstat-no" title="statement not covered" >    key.name = 'space';</span>
-<span class="cstat-no" title="statement not covered" >    key.meta = (s.length === 2);</span>
+  } else <span class="cstat-no" title="statement not covered">if (s === ' ' || s === '\x1b ') {</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'space';</span>
+<span class="cstat-no" title="statement not covered">    key.meta = (s.length === 2);</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s &lt;= '\x1a') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s &lt;= '\x1a') {</span>
     // ctrl+letter
-<span class="cstat-no" title="statement not covered" >    key.name = String.fromCharCode(s.charCodeAt(0) + 'a'.charCodeAt(0) - 1);</span>
-<span class="cstat-no" title="statement not covered" >    key.ctrl = true;</span>
+<span class="cstat-no" title="statement not covered">    key.name = String.fromCharCode(s.charCodeAt(0) + 'a'.charCodeAt(0) - 1);</span>
+<span class="cstat-no" title="statement not covered">    key.ctrl = true;</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s.length === 1 &amp;&amp; s &gt;= 'a' &amp;&amp; s &lt;= 'z') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s.length === 1 &amp;&amp; s &gt;= 'a' &amp;&amp; s &lt;= 'z') {</span>
     // lowercase letter
-<span class="cstat-no" title="statement not covered" >    key.name = s;</span>
+<span class="cstat-no" title="statement not covered">    key.name = s;</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (s.length === 1 &amp;&amp; s &gt;= 'A' &amp;&amp; s &lt;= 'Z') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s.length === 1 &amp;&amp; s &gt;= 'A' &amp;&amp; s &lt;= 'Z') {</span>
     // shift+letter
-<span class="cstat-no" title="statement not covered" >    key.name = s.toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >    key.shift = true;</span>
+<span class="cstat-no" title="statement not covered">    key.name = s.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered">    key.shift = true;</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (parts = metaKeyCodeRe.exec(s)) {</span>
+  } else <span class="cstat-no" title="statement not covered">if (parts = metaKeyCodeRe.exec(s)) {</span>
     // meta+character key
-<span class="cstat-no" title="statement not covered" >    key.name = parts[1].toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >    key.meta = true;</span>
-<span class="cstat-no" title="statement not covered" >    key.shift = /^[A-Z]$/.test(parts[1]);</span>
+<span class="cstat-no" title="statement not covered">    key.name = parts[1].toLowerCase();</span>
+<span class="cstat-no" title="statement not covered">    key.meta = true;</span>
+<span class="cstat-no" title="statement not covered">    key.shift = /^[A-Z]$/.test(parts[1]);</span>
 &nbsp;
-  } else <span class="cstat-no" title="statement not covered" >if (parts = functionKeyCodeRe.exec(s)) {</span>
+  } else <span class="cstat-no" title="statement not covered">if (parts = functionKeyCodeRe.exec(s)) {</span>
     // ansi escape sequence
 &nbsp;
     // reassemble the key code leaving out leading \x1b's,
     // the modifier key bitflag and any meaningless "1;" sequence
-<span class="cstat-no" title="statement not covered" >    var code = (parts[1] || '') + (parts[2] || '') +</span>
+<span class="cstat-no" title="statement not covered">    var code = (parts[1] || '') + (parts[2] || '') +</span>
                (parts[4] || '') + (parts[6] || ''),
         modifier = (parts[3] || parts[5] || 1) - 1;
 &nbsp;
     // Parse the key modifier
-<span class="cstat-no" title="statement not covered" >    key.ctrl = !!(modifier &amp; 4);</span>
-<span class="cstat-no" title="statement not covered" >    key.meta = !!(modifier &amp; 10);</span>
-<span class="cstat-no" title="statement not covered" >    key.shift = !!(modifier &amp; 1);</span>
-<span class="cstat-no" title="statement not covered" >    key.code = code;</span>
+<span class="cstat-no" title="statement not covered">    key.ctrl = !!(modifier &amp; 4);</span>
+<span class="cstat-no" title="statement not covered">    key.meta = !!(modifier &amp; 10);</span>
+<span class="cstat-no" title="statement not covered">    key.shift = !!(modifier &amp; 1);</span>
+<span class="cstat-no" title="statement not covered">    key.code = code;</span>
 &nbsp;
     // Parse the key itself
-<span class="cstat-no" title="statement not covered" >    switch (code) {</span>
+<span class="cstat-no" title="statement not covered">    switch (code) {</span>
       /* xterm/gnome ESC O letter */
-      case 'OP': <span class="cstat-no" title="statement not covered" >key.name = 'f1'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OQ': <span class="cstat-no" title="statement not covered" >key.name = 'f2'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OR': <span class="cstat-no" title="statement not covered" >key.name = 'f3'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OS': <span class="cstat-no" title="statement not covered" >key.name = 'f4'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case 'OP': <span class="cstat-no" title="statement not covered">key.name = 'f1'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OQ': <span class="cstat-no" title="statement not covered">key.name = 'f2'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OR': <span class="cstat-no" title="statement not covered">key.name = 'f3'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OS': <span class="cstat-no" title="statement not covered">key.name = 'f4'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* xterm/rxvt ESC [ number ~ */
-      case '[11~': <span class="cstat-no" title="statement not covered" >key.name = 'f1'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[12~': <span class="cstat-no" title="statement not covered" >key.name = 'f2'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[13~': <span class="cstat-no" title="statement not covered" >key.name = 'f3'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[14~': <span class="cstat-no" title="statement not covered" >key.name = 'f4'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[11~': <span class="cstat-no" title="statement not covered">key.name = 'f1'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[12~': <span class="cstat-no" title="statement not covered">key.name = 'f2'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[13~': <span class="cstat-no" title="statement not covered">key.name = 'f3'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[14~': <span class="cstat-no" title="statement not covered">key.name = 'f4'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* from Cygwin and used in libuv */
-      case '[[A': <span class="cstat-no" title="statement not covered" >key.name = 'f1'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[[B': <span class="cstat-no" title="statement not covered" >key.name = 'f2'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[[C': <span class="cstat-no" title="statement not covered" >key.name = 'f3'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[[D': <span class="cstat-no" title="statement not covered" >key.name = 'f4'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[[E': <span class="cstat-no" title="statement not covered" >key.name = 'f5'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[[A': <span class="cstat-no" title="statement not covered">key.name = 'f1'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[[B': <span class="cstat-no" title="statement not covered">key.name = 'f2'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[[C': <span class="cstat-no" title="statement not covered">key.name = 'f3'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[[D': <span class="cstat-no" title="statement not covered">key.name = 'f4'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[[E': <span class="cstat-no" title="statement not covered">key.name = 'f5'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* common */
-      case '[15~': <span class="cstat-no" title="statement not covered" >key.name = 'f5'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[17~': <span class="cstat-no" title="statement not covered" >key.name = 'f6'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[18~': <span class="cstat-no" title="statement not covered" >key.name = 'f7'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[19~': <span class="cstat-no" title="statement not covered" >key.name = 'f8'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[20~': <span class="cstat-no" title="statement not covered" >key.name = 'f9'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[21~': <span class="cstat-no" title="statement not covered" >key.name = 'f10'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[23~': <span class="cstat-no" title="statement not covered" >key.name = 'f11'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[24~': <span class="cstat-no" title="statement not covered" >key.name = 'f12'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[15~': <span class="cstat-no" title="statement not covered">key.name = 'f5'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[17~': <span class="cstat-no" title="statement not covered">key.name = 'f6'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[18~': <span class="cstat-no" title="statement not covered">key.name = 'f7'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[19~': <span class="cstat-no" title="statement not covered">key.name = 'f8'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[20~': <span class="cstat-no" title="statement not covered">key.name = 'f9'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[21~': <span class="cstat-no" title="statement not covered">key.name = 'f10'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[23~': <span class="cstat-no" title="statement not covered">key.name = 'f11'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[24~': <span class="cstat-no" title="statement not covered">key.name = 'f12'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* xterm ESC [ letter */
-      case '[A': <span class="cstat-no" title="statement not covered" >key.name = 'up'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[B': <span class="cstat-no" title="statement not covered" >key.name = 'down'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[C': <span class="cstat-no" title="statement not covered" >key.name = 'right'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[D': <span class="cstat-no" title="statement not covered" >key.name = 'left'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[E': <span class="cstat-no" title="statement not covered" >key.name = 'clear'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[F': <span class="cstat-no" title="statement not covered" >key.name = 'end'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[H': <span class="cstat-no" title="statement not covered" >key.name = 'home'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[A': <span class="cstat-no" title="statement not covered">key.name = 'up'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[B': <span class="cstat-no" title="statement not covered">key.name = 'down'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[C': <span class="cstat-no" title="statement not covered">key.name = 'right'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[D': <span class="cstat-no" title="statement not covered">key.name = 'left'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[E': <span class="cstat-no" title="statement not covered">key.name = 'clear'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[F': <span class="cstat-no" title="statement not covered">key.name = 'end'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[H': <span class="cstat-no" title="statement not covered">key.name = 'home'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* xterm/gnome ESC O letter */
-      case 'OA': <span class="cstat-no" title="statement not covered" >key.name = 'up'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OB': <span class="cstat-no" title="statement not covered" >key.name = 'down'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OC': <span class="cstat-no" title="statement not covered" >key.name = 'right'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OD': <span class="cstat-no" title="statement not covered" >key.name = 'left'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OE': <span class="cstat-no" title="statement not covered" >key.name = 'clear'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OF': <span class="cstat-no" title="statement not covered" >key.name = 'end'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'OH': <span class="cstat-no" title="statement not covered" >key.name = 'home'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case 'OA': <span class="cstat-no" title="statement not covered">key.name = 'up'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OB': <span class="cstat-no" title="statement not covered">key.name = 'down'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OC': <span class="cstat-no" title="statement not covered">key.name = 'right'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OD': <span class="cstat-no" title="statement not covered">key.name = 'left'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OE': <span class="cstat-no" title="statement not covered">key.name = 'clear'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OF': <span class="cstat-no" title="statement not covered">key.name = 'end'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'OH': <span class="cstat-no" title="statement not covered">key.name = 'home'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* xterm/rxvt ESC [ number ~ */
-      case '[1~': <span class="cstat-no" title="statement not covered" >key.name = 'home'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[2~': <span class="cstat-no" title="statement not covered" >key.name = 'insert'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[3~': <span class="cstat-no" title="statement not covered" >key.name = 'delete'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[4~': <span class="cstat-no" title="statement not covered" >key.name = 'end'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[5~': <span class="cstat-no" title="statement not covered" >key.name = 'pageup'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[6~': <span class="cstat-no" title="statement not covered" >key.name = 'pagedown'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[1~': <span class="cstat-no" title="statement not covered">key.name = 'home'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[2~': <span class="cstat-no" title="statement not covered">key.name = 'insert'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[3~': <span class="cstat-no" title="statement not covered">key.name = 'delete'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[4~': <span class="cstat-no" title="statement not covered">key.name = 'end'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[5~': <span class="cstat-no" title="statement not covered">key.name = 'pageup'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[6~': <span class="cstat-no" title="statement not covered">key.name = 'pagedown'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* putty */
-      case '[[5~': <span class="cstat-no" title="statement not covered" >key.name = 'pageup'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[[6~': <span class="cstat-no" title="statement not covered" >key.name = 'pagedown'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[[5~': <span class="cstat-no" title="statement not covered">key.name = 'pageup'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[[6~': <span class="cstat-no" title="statement not covered">key.name = 'pagedown'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* rxvt */
-      case '[7~': <span class="cstat-no" title="statement not covered" >key.name = 'home'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[8~': <span class="cstat-no" title="statement not covered" >key.name = 'end'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[7~': <span class="cstat-no" title="statement not covered">key.name = 'home'; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[8~': <span class="cstat-no" title="statement not covered">key.name = 'end'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* rxvt keys with modifiers */
-      case '[a': <span class="cstat-no" title="statement not covered" >key.name = 'up'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[b': <span class="cstat-no" title="statement not covered" >key.name = 'down'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[c': <span class="cstat-no" title="statement not covered" >key.name = 'right'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[d': <span class="cstat-no" title="statement not covered" >key.name = 'left'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[e': <span class="cstat-no" title="statement not covered" >key.name = 'clear'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[a': <span class="cstat-no" title="statement not covered">key.name = 'up'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[b': <span class="cstat-no" title="statement not covered">key.name = 'down'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[c': <span class="cstat-no" title="statement not covered">key.name = 'right'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[d': <span class="cstat-no" title="statement not covered">key.name = 'left'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[e': <span class="cstat-no" title="statement not covered">key.name = 'clear'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
-      case '[2$': <span class="cstat-no" title="statement not covered" >key.name = 'insert'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[3$': <span class="cstat-no" title="statement not covered" >key.name = 'delete'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[5$': <span class="cstat-no" title="statement not covered" >key.name = 'pageup'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[6$': <span class="cstat-no" title="statement not covered" >key.name = 'pagedown'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[7$': <span class="cstat-no" title="statement not covered" >key.name = 'home'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[8$': <span class="cstat-no" title="statement not covered" >key.name = 'end'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[2$': <span class="cstat-no" title="statement not covered">key.name = 'insert'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[3$': <span class="cstat-no" title="statement not covered">key.name = 'delete'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[5$': <span class="cstat-no" title="statement not covered">key.name = 'pageup'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[6$': <span class="cstat-no" title="statement not covered">key.name = 'pagedown'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[7$': <span class="cstat-no" title="statement not covered">key.name = 'home'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[8$': <span class="cstat-no" title="statement not covered">key.name = 'end'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
-      case 'Oa': <span class="cstat-no" title="statement not covered" >key.name = 'up'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'Ob': <span class="cstat-no" title="statement not covered" >key.name = 'down'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'Oc': <span class="cstat-no" title="statement not covered" >key.name = 'right'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'Od': <span class="cstat-no" title="statement not covered" >key.name = 'left'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case 'Oe': <span class="cstat-no" title="statement not covered" >key.name = 'clear'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case 'Oa': <span class="cstat-no" title="statement not covered">key.name = 'up'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'Ob': <span class="cstat-no" title="statement not covered">key.name = 'down'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'Oc': <span class="cstat-no" title="statement not covered">key.name = 'right'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'Od': <span class="cstat-no" title="statement not covered">key.name = 'left'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case 'Oe': <span class="cstat-no" title="statement not covered">key.name = 'clear'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
-      case '[2^': <span class="cstat-no" title="statement not covered" >key.name = 'insert'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[3^': <span class="cstat-no" title="statement not covered" >key.name = 'delete'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[5^': <span class="cstat-no" title="statement not covered" >key.name = 'pageup'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[6^': <span class="cstat-no" title="statement not covered" >key.name = 'pagedown'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[7^': <span class="cstat-no" title="statement not covered" >key.name = 'home'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      case '[8^': <span class="cstat-no" title="statement not covered" >key.name = 'end'; <span class="cstat-no" title="statement not covered" ></span>key.ctrl = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[2^': <span class="cstat-no" title="statement not covered">key.name = 'insert'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[3^': <span class="cstat-no" title="statement not covered">key.name = 'delete'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[5^': <span class="cstat-no" title="statement not covered">key.name = 'pageup'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[6^': <span class="cstat-no" title="statement not covered">key.name = 'pagedown'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[7^': <span class="cstat-no" title="statement not covered">key.name = 'home'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      case '[8^': <span class="cstat-no" title="statement not covered">key.name = 'end'; <span class="cstat-no" title="statement not covered"></span>key.ctrl = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
       /* misc. */
-      case '[Z': <span class="cstat-no" title="statement not covered" >key.name = 'tab'; <span class="cstat-no" title="statement not covered" ></span>key.shift = true; <span class="cstat-no" title="statement not covered" ></span>break;</span>
-      default: <span class="cstat-no" title="statement not covered" >key.name = 'undefined'; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      case '[Z': <span class="cstat-no" title="statement not covered">key.name = 'tab'; <span class="cstat-no" title="statement not covered"></span>key.shift = true; <span class="cstat-no" title="statement not covered"></span>break;</span>
+      default: <span class="cstat-no" title="statement not covered">key.name = 'undefined'; <span class="cstat-no" title="statement not covered"></span>break;</span>
 &nbsp;
     }
-  } else <span class="cstat-no" title="statement not covered" >if (s.length &gt; 1 &amp;&amp; s[0] !== '\x1b') {</span>
+  } else <span class="cstat-no" title="statement not covered">if (s.length &gt; 1 &amp;&amp; s[0] !== '\x1b') {</span>
     // Got a longer-than-one string of characters.
     // Probably a paste, since it wasn't a control sequence.
-<span class="cstat-no" title="statement not covered" >    Array.prototype.forEach.call(s, <span class="fstat-no" title="function not covered" >function(c) {</span></span>
-<span class="cstat-no" title="statement not covered" >      emitKey(stream, c);</span>
+<span class="cstat-no" title="statement not covered">    Array.prototype.forEach.call(s, <span class="fstat-no" title="function not covered">function(c) {</span></span>
+<span class="cstat-no" title="statement not covered">      emitKey(stream, c);</span>
     });
-<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered">    return;</span>
   }
 &nbsp;
   // XXX: this "mouse" parsing code is NOT part of the node-core standard
   // `readline.js` module, and is a `keypress` module non-standard extension.
-<span class="cstat-no" title="statement not covered" >  if (key.code == '[M') {</span>
-<span class="cstat-no" title="statement not covered" >    key.name = 'mouse';</span>
-<span class="cstat-no" title="statement not covered" >    var s = key.sequence;</span>
-<span class="cstat-no" title="statement not covered" >    var b = s.charCodeAt(3);</span>
-<span class="cstat-no" title="statement not covered" >    key.x = s.charCodeAt(4) - 040;</span>
-<span class="cstat-no" title="statement not covered" >    key.y = s.charCodeAt(5) - 040;</span>
+<span class="cstat-no" title="statement not covered">  if (key.code == '[M') {</span>
+<span class="cstat-no" title="statement not covered">    key.name = 'mouse';</span>
+<span class="cstat-no" title="statement not covered">    var s = key.sequence;</span>
+<span class="cstat-no" title="statement not covered">    var b = s.charCodeAt(3);</span>
+<span class="cstat-no" title="statement not covered">    key.x = s.charCodeAt(4) - 040;</span>
+<span class="cstat-no" title="statement not covered">    key.y = s.charCodeAt(5) - 040;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    key.scroll = 0;</span>
+<span class="cstat-no" title="statement not covered">    key.scroll = 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    key.ctrl  = !!(1&lt;&lt;4 &amp; b);</span>
-<span class="cstat-no" title="statement not covered" >    key.meta  = !!(1&lt;&lt;3 &amp; b);</span>
-<span class="cstat-no" title="statement not covered" >    key.shift = !!(1&lt;&lt;2 &amp; b);</span>
+<span class="cstat-no" title="statement not covered">    key.ctrl  = !!(1&lt;&lt;4 &amp; b);</span>
+<span class="cstat-no" title="statement not covered">    key.meta  = !!(1&lt;&lt;3 &amp; b);</span>
+<span class="cstat-no" title="statement not covered">    key.shift = !!(1&lt;&lt;2 &amp; b);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    key.release = (3 &amp; b) === 3;</span>
+<span class="cstat-no" title="statement not covered">    key.release = (3 &amp; b) === 3;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (1&lt;&lt;6 &amp; b) { //scroll</span>
-<span class="cstat-no" title="statement not covered" >      key.scroll = 1 &amp; b ? 1 : -1;</span>
+<span class="cstat-no" title="statement not covered">    if (1&lt;&lt;6 &amp; b) { //scroll</span>
+<span class="cstat-no" title="statement not covered">      key.scroll = 1 &amp; b ? 1 : -1;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!key.release &amp;&amp; !key.scroll) {</span>
-<span class="cstat-no" title="statement not covered" >      key.button = b &amp; 3;</span>
+<span class="cstat-no" title="statement not covered">    if (!key.release &amp;&amp; !key.scroll) {</span>
+<span class="cstat-no" title="statement not covered">      key.button = b &amp; 3;</span>
     }
   }
 &nbsp;
   // Don't emit a key if no name was found
-<span class="cstat-no" title="statement not covered" >  if (key.name === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >    key = undefined;</span>
+<span class="cstat-no" title="statement not covered">  if (key.name === undefined) {</span>
+<span class="cstat-no" title="statement not covered">    key = undefined;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (s.length === 1) {</span>
-<span class="cstat-no" title="statement not covered" >    ch = s;</span>
+<span class="cstat-no" title="statement not covered">  if (s.length === 1) {</span>
+<span class="cstat-no" title="statement not covered">    ch = s;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (key &amp;&amp; key.name == 'mouse') {</span>
-<span class="cstat-no" title="statement not covered" >    stream.emit('mousepress', key);</span>
-  } else <span class="cstat-no" title="statement not covered" >if (key || ch) {</span>
-<span class="cstat-no" title="statement not covered" >    stream.emit('keypress', ch, key);</span>
+<span class="cstat-no" title="statement not covered">  if (key &amp;&amp; key.name == 'mouse') {</span>
+<span class="cstat-no" title="statement not covered">    stream.emit('mousepress', key);</span>
+  } else <span class="cstat-no" title="statement not covered">if (key || ch) {</span>
+<span class="cstat-no" title="statement not covered">    stream.emit('keypress', ch, key);</span>
   }
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 21:34:36 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 19:44:41 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
