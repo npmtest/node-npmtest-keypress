@@ -1,6 +1,6 @@
 # npmtest-keypress
 
-#### test coverage for  [keypress (v0.2.1)](https://github.com/TooTallNate/keypress#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-keypress.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-keypress) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-keypress.svg)](https://travis-ci.org/npmtest/node-npmtest-keypress)
+#### basic test coverage for  [keypress (v0.2.1)](https://github.com/TooTallNate/keypress#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-keypress.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-keypress) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-keypress.svg)](https://travis-ci.org/npmtest/node-npmtest-keypress)
 
 #### Make any Node ReadableStream emit "keypress" events
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-keypress/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-keypress/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-keypress/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-keypress/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-keypress/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-keypress/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-keypress/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-keypress/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-keypress/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-keypress/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-keypress/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-keypress/build/coverage.html/index.html)
 
@@ -73,7 +73,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "version": "0.2.1"
+    "version": "0.2.1",
+    "bin": {}
 }
 ```
 
